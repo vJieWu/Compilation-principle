@@ -2,7 +2,6 @@ import random
 import time
 
 def main():
-
     start_time = time.time()
     
     SIZE = 4000
@@ -16,7 +15,7 @@ def main():
     for i in range(SIZE):
         for j in range(SIZE):
             martix_result[j] += (random.randint(0, 99))*martix_init[j]
-        print('martix_result[%s] = %d' % (i, martix_result[i]))
+        #print('martix_result[%s] = %d' % (i, martix_result[i]))
       
     end_time = time.time()
 
