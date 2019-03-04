@@ -5,17 +5,14 @@ def main():
     start_time = time.time()
     
     SIZE = 4000
-    martix_init = []
-    martix_result = []
+    vector = []
     
     for i in range(SIZE):
-        martix_init.append(random.randint(0, 99))
-        martix_result.append(0)
-
-    for i in range(SIZE):
+        temp = random.randint(0, 99)
+        vector.append(0)
         for j in range(SIZE):
-            martix_result[j] += (random.randint(0, 99))*martix_init[j]
-        #print('martix_result[%s] = %d' % (i, martix_result[i]))
+            vector[i] += (random.randint(0, 99))*temp
+        #print('vector[%s] = %d' % (i, vector[i]))
       
     end_time = time.time()
 

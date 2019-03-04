@@ -3,28 +3,24 @@
 #include <cstdlib>
 #include <cstring> 
 using namespace std;
-#define SIZE 10000 
+#define SIZE 30000 
 
 int main()
 {
     clock_t start_time = clock();
     srand(int(time(0)));
 
-    int vector_init[SIZE], vector_result[SIZE];
+    int vector[SIZE];
     
     for (int i = 0; i < SIZE; i++)
     {
-        vector_init[i] = rand() % 100;
-        vector_result[i] = 0;
-    }
-
-    for (int i = 0; i < SIZE; i++)
-    {
+    	int temp = rand() % 100;
+    	vector[i] = 0;
         for (int j = 0; j < SIZE; j++)
         {
-            vector_result[i] += (rand() % 100) * vector_init[i];
+            vector[i] += (rand() % 100) * temp;
         }
-        //cout <<"vector_result["<<i<<"] = "<< vector_result[i] << endl;
+        //cout <<"vector_result["<<i<<"] = "<< vector[i] << endl;
     }
 
     clock_t end_time = clock();
