@@ -1,29 +1,39 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include <cstring> 
+#include <cstring>
 using namespace std;
-#define SIZE 30000 
+#define SIZE 10000
 
 int main()
 {
-    clock_t start_time = clock();
     srand(int(time(0)));
 
-    int vector[SIZE];
-    
+    int vector_init[SIZE], vector_result[SIZE];
+
     for (int i = 0; i < SIZE; i++)
     {
-    	int temp = rand() % 100;
-    	vector[i] = 0;
+        vector_init[i] = rand() % 100;
+        vector_result[i] = 0;
+    }
+
+    clock_t start_time = clock();
+
+    for (int i = 0; i < SIZE; i++)
+    {
         for (int j = 0; j < SIZE; j++)
         {
-            vector[i] += (rand() % 100) * temp;
+            vector_result[i] += (rand() % 100) * vector_init[i];
         }
-        //cout <<"vector_result["<<i<<"] = "<< vector[i] << endl;
     }
 
     clock_t end_time = clock();
+
+    for (int i = 0; i < SIZE; i++)
+    {
+        cout << "vector_result[" << i << "] = " << vector_result[i] << endl;
+    }
+
     cout << "Total Time:" << (end_time - start_time) << " ms" << endl;
     return 0;
 }

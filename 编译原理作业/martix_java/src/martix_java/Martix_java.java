@@ -1,28 +1,35 @@
 package martix_java;
+
 import java.util.Random;
 
 public class Martix_java {
     public static void main(String args[]) {
 
-        long start_time = System.currentTimeMillis();
+        final int SIZE = 4000;
+        int[] vector_init = new int[SIZE];
+        int[] vector_result = new int[SIZE];
 
-        final int SIZE = 30000;
-
-        int[] vector = new int[SIZE];
-        
         Random random = new Random();
 
         for (int i = 0; i < SIZE; i++) {
-        	int temp = random.nextInt(100);
-        	vector[i] = 0;
+            vector_init[i] = random.nextInt(100);
+            vector_result[i] = 0;
+        }
+
+        long start_time = System.currentTimeMillis();
+
+        for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
-                vector[i] += temp * random.nextInt(100);
-            }
-            //System.out.println("vector_result[" + i + "]= " + vector[i]);
+                vector_result[i] += vector_init[i] * random.nextInt(100);
+            }      
         }
 
         long end_time = System.currentTimeMillis();
-        System.out.println("Total time: " + (end_time - start_time) + " ms");
 
+        for (int i = 0; i<SIZE; i++){
+            System.out.println("vector_result[" + i + "]= " + vector_result[i]);
+        }
+
+        System.out.println("Total time: " + (end_time - start_time) + " ms");
     }
 }
