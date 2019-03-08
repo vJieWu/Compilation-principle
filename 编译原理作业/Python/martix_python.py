@@ -1,27 +1,31 @@
 import random
 import time
 
-
 def main():
 
-    SIZE = 400
-    martix_init = []
-    martix_result = []
+    SIZE = 1000
+    matrix_init = []
+    matrix_result = []
+    matrix = [[0] * SIZE for i in range(SIZE)]
 
     for i in range(SIZE):
-        martix_init.append(random.randint(0, 99))
-        martix_result.append(0)
+        matrix_init.append(random.randint(0, 99))
+        matrix_result.append(0)
+
+    for i in range(SIZE):
+        for j in range(SIZE):
+            matrix[i][j] = (random.randint(0, 99))
 
     start_time = time.time()
 
     for i in range(SIZE):
         for j in range(SIZE):
-            martix_result[j] += (random.randint(0, 99))*martix_init[j]
+            matrix_result[j] += matrix[i][j] * matrix_init[j]
 
     end_time = time.time()
 
     for i in range(SIZE):
-        print('martix_result[%s] = %d' % (i, martix_result[i]))
+        print('matrix_result[%s] = %d' % (i, matrix_result[i]))
 
     print('Total time: %s ms' % ((end_time-start_time)*1000))
 
