@@ -42,8 +42,6 @@ int main()
 	
     clock_t end_time = clock();
 
-    
-
     for (int i = 0; i < SIZE; i++)
     {
         cout << "vector_result[" << i << "] = " << vector_result[i] << endl;
